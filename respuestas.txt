@@ -1,3 +1,8 @@
+Práctica de Laboratorio #3 - LPP
+Realizada por: Víctor Plaza Martín
+Repositorio GitHub: https://github.com/alu0100630473/prct03.git
+
+
 Respuesta a la pregunta 18.
 ¿Que significado tiene la salida? (puts 'Hola Mundo')
 
@@ -45,3 +50,314 @@ s[-1,1] -> o
 s[0,10] -> hello
 O sea, lo que realiza es se posiciona en la posición del primer valor y muestra un numero de caracteres igual al segundo valor, siendo el limite el nº de caracteres de la cadena. Cabe destacar el caracter circular que observamos por ejemplo en s[-1,1].
 
+
+Respuesta a la pregunta 27
+¿Qué queda en g?
+"helloworld"
+
+
+Respuesta a la pregunta 28
+¿Qué queda en e?
+"..."
+
+
+Respuesta a la pregunta 29
+¿Cuál es el resultado?
+"222"
+
+
+Respuesta a la pregunta 30
+¿Qué es esto? %w[this is a test]
+Es una función que convierte un string en un array de string separando por espacios.
+
+
+Respuesta a la pregunta 31
+¿Qué es esto? %w[\t \n]
+Es lo mismo que en el caso anterior, obteniendo como resultado un array compuesto por los caracteres \t y por \n, sin interpertar.
+
+
+Respuesta a la pregunta 32
+¿Qué es esto? %W[\t \n]
+Similar al caso anterior, obteniendo como resultado un array compuesto por una tabulación y un salto de linea, o sea interpretando el contenido del array.
+
+
+Respuesta a la pregunta 33
+¿Qué contiene nils? nils = Array.new(3)
+nils es un array compuesto por 3 valores nil, o sea [nil, nil, nil].
+
+
+Respuesta a la pregunta 34
+¿Qué contiene zeros? zeros = Array.new(3,0)
+zeros es un array compuesto por 3 ceros, o sea [0, 0, 0].
+
+
+Respuesta a la pregunta 35
+¿Qué queda en b?
+[[1,2],[3,4]]
+
+
+Respuesta a la pregunta 36
+¿Qué queda en c?
+[0,2,4]
+
+
+Respuesta a la pregunta 37
+¿Cuál es el resultado de cada una de estas operaciones?
+a[1,1] => ["b"]
+a[-2,2] =>["d", "e"] 
+a[0...1] => ["a"]
+a[-2..-1] => ["d", "e"]
+
+
+Respuesta a la pregunta 38
+¿Cuál es el resultado de cada una de estas operaciones?
+>> a
+=> ["a", "b", "c", "d", "e"]
+>> a[0,2] = %w{A B}
+=> ["A", "B"]
+>> a
+=> ["A", "B", "c", "d", "e"]
+>> a[2..5] = %w{C D E}
+=> ["C", "D", "E"]
+>> a
+=> ["A", "B", "C", "D", "E"] 
+>> a[0,0] = [1,2,3]
+=> [1, 2, 3]
+>> a
+=> [1, 2, 3, "A", "B", "C", "D", "E"] 
+>> a[0,2] = []
+=> []
+>> a
+=> [3, "A", "B", "C", "D", "E"] 
+>> a[-1,1] = [ ’Z’ ]
+=> ["Z"]
+>> a
+=> En esta operación me da error, me dice que 'Z' es un metodo o variable indefinida, por lo que no puedo continuar
+>> a[-2,2] = nil
+=> nil
+>> a
+=>
+
+
+Respuesta a la pregunta 39
+¿Cuál es el resultado de cada una de estas operaciones?
+>> a = (1...4).to_a
+=> [1, 2, 3] 
+>> a = a + [4, 5]
+=> [1, 2, 3, 4, 5]
+>> a += [[6, 7, 8]]
+=> [1, 2, 3, 4, 5, [6, 7, 8]]
+>> a = a + 9
+El resultado es un error "TypeError" debido a una converción implicita entre variables, de Fixnum a Array.
+
+
+Respuesta a la pregunta 40
+¿Cuál es el resultado de cada una de estas operaciones?
+>> x = %w{a b c b a}
+=> ["a", "b", "c", "b", "a"]
+>> x = x - %w{b c d}
+=> ["a", "a"] 
+
+
+Respuesta a la pregunta 41
+¿Cuál es el resultado de cada una de estas operaciones?
+>> z = [0]*8
+=> [0, 0, 0, 0, 0, 0, 0, 0] 
+
+
+Respuesta a la pregunta 42
+¿Cuál es el resultado de cada una de estas operaciones?
+>> a = []
+=> []
+>> a << 1
+=> [1]
+>> a << 2 << 3
+=> [1, 2, 3] 
+>> a << [4, 5, 6]
+=> [1, 2, 3, [4, 5, 6]] 
+>> a.concat [7, 8]
+=> [1, 2, 3, [4, 5, 6], 7, 8] 
+
+
+Respuesta a la pregunta 43
+¿Cuál es el resultado de cada una de estas operaciones?
+>> a = [1, 1, 2, 2, 3, 3, 4]
+=> [1, 1, 2, 2, 3, 3, 4]
+>> b = [5, 5, 4, 4, 3, 3, 2]
+=> [5, 5, 4, 4, 3, 3, 2]
+>> c = a | b
+=> [1, 2, 3, 4, 5]
+>> d = b | a
+=> [5, 4, 3, 2, 1] 
+>> e = a & b
+=> [2, 3, 4]
+>> f = b & a
+=> [4, 3, 2]
+
+
+Respuesta a la pregunta 44
+¿Qué resultados dan las siguientes operaciones?
+>> a = 1..10
+=> 1..10
+>> a.class
+=> Range
+>> a.to_a
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>> b = 1...10
+=> 1....10
+>> b.to_a
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+>> b.include? 10
+=> false
+>> b.include? 8
+=> true
+>> b.step(2) {|x| print "#{x} " }
+1 3 5 7 9  => 1...10 
+>> 1..3.to_a
+Me da error "NoMethodError" debido a que to_a no es un metodo definido para el Fixnum 3.
+
+
+Respuesta a la pregunta 45
+¿Qué resultados dan las siguientes operaciones?
+>> r = 0...100
+=> 0....100
+>> r.member? 50
+=> true
+>> r.include? 99.9
+=> true
+>> r.member? 99.9
+=> true
+
+
+Respuesta a la pregunta 46
+¿Qué resultados dan las siguientes operaciones?
+>> true.class
+=> TrueClass
+>> false.class
+=> FlaseClass
+>> puts "hello" if 0
+hello
+=>nil
+>> puts "hello" if nil
+=> nil
+>> puts "hello" if ""
+hello #pero da un warning ya que usamos un string como condición
+=> nil 
+
+
+Respuesta a la pregunta 47
+¿Qué resultados dan las siguientes operaciones?
+>> x = :sym
+=> :sym
+>> x.class
+=> Symbol
+>> x == ’sym’
+=> false
+>> x == :sym
+=> true
+>> z = :’a long symbol’
+=> :"a long symbol"
+>> z.class
+=> Symbol
+>> x == ’sym’.to_sym
+=> true
+>> x.to_s == ’sym’
+=> true
+
+
+Respuesta a la pregunta 48
+¿Qué resultados se dan?
+>> s = "Ruby"
+=> "Ruby"
+>> t = s
+=> "Ruby"
+>> t[-1] = ""
+=> ""
+>> print s
+Rub => nil
+>> t = "Java"
+=> "Java"
+>> print s, t
+RubJava => nil 
+
+
+Respuesta a la pregunta 49
+¿Cuál es el resultado?
+>> "%d %s" % [3, "rubies"]
+=> "3 rubies"
+
+
+Respuesta a la pregunta 50
+¿Cuáles son los resultados?
+>> x, y = 4, 5
+=> [4, 5] 
+>> z = x > y ? x : y
+=> 5
+>> x,y,z = [1,2,3]
+=> [1, 2, 3]
+
+
+Respuesta a la pregunta 51
+¿Qué resultados dan las siguientes operaciones?
+>> x = { :a => 1, :b => 2 }
+=> {:b=>2, :a=>1}
+>> x.keys
+=> [:a, :b] 
+>> x.values
+=> [1, 2]
+>> x[:c] = 3
+=> 3
+>> x
+=> {:a=>1, :b=>2, :c=>3} 
+>> x.delete(’a’)
+=> nil
+>> x
+=> {:a=>1, :b=>2, :c=>3}
+>> x.delete(:a)
+=> 1
+>> x
+=> {:b=>2, :c=>3} 
+>> x = { :a => 1, :b => 2, :c => 4 }
+=> {:b=>2, :c=>4, :a=>1}
+>> x.delete_if { |k,v| v % 2 == 0 }
+=> {:a=>1}
+>> x
+=> {:a=>1}
+
+
+Respuesta a la pregunta 52
+¿Qué hace yield 4,5?
+Un método puede usar un bloque mediante la palabra yield, aceptado a su vez parámetros como por ejemplo:
+
+def test
+   yield 5
+   puts "You are in the method test"
+   yield 100
+end
+test {|i| puts "You are in the block #{i}"}
+
+Cuya salida sería:
+You are in the block 5
+You are in the method test
+You are in the block 100
+
+
+Respuesta a la pregunta 53
+¿Qué hace la siguiente sentencia? counts = Hash.new(0) ¿Qué diferencia hay con la asignación counts = {}
+Crea una variable counts de tipo Hash vacía. No hay diferencia.
+
+
+Respuesta a la pregunta 54
+¿Qué retorna esta expresión? 'hello world, hello LPP'.scan /\w+/
+["hello", "world", "hello", "LPP"] 
+
+
+Respuesta a la pregunta 55
+Explique que hacen estas sentencias
+c = { :a => 3, :b => 2, :c => 1 }
+c.keys.sort.each { |k| puts c[k] }
+
+Ordena el contenido de la variable c en función de las claves (a,b,c), e imprime por pantalla sus values asociados:
+3
+2
+1
